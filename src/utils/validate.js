@@ -7,7 +7,8 @@ export function isExternal(path) {
 }
 
 export function validUsername(str) {
-  const valid_map = ['admin', 'editor']
+  // mock validate users
+  const valid_map = ['zhangle', 'zcy']
   return valid_map.indexOf(str.trim()) >= 0
 }
 

@@ -1,8 +1,8 @@
 {
-  "name": "vue-element-admin",
+  "name": "my-platform",
   "version": "4.0.0",
   "description": "A magical vue admin. An out-of-box UI solution for enterprise applications. Newest development stack of vue. Lots of awesome features",
-  "author": "Pan <panfree23@gmail.com>",
+  "author": "Tim <tim.zhang1981@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "vue-cli-service serve",
@@ -37,10 +37,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PanJiaChen/vue-element-admin.git"
+    "url": "git+https://github.com/cyouraku/MyPlatformUI.git"
   },
   "bugs": {
-    "url": "https://github.com/PanJiaChen/vue-element-admin/issues"
+    "url": "https://github.com/cyouraku/MyPlatformUI/issues"
   },
   "dependencies": {
     "axios": "0.18.0",

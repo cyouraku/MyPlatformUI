@@ -31,7 +31,7 @@
               {{ $t('navbar.dashboard') }}
             </el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/PanJiaChen/vue-element-admin/">
+          <a target="_blank" href="https://github.com/cyouraku/MyPlatformUI/">
             <el-dropdown-item>
               {{ $t('navbar.github') }}
             </el-dropdown-item>

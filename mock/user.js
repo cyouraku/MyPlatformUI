@@ -1,10 +1,13 @@
-
+// mock user token
 const tokens = {
   admin: {
     token: 'admin-token'
   },
-  editor: {
+  zcy: {
     token: 'editor-token'
+  },
+  zhangle: {
+    token: 'admin-token'
   }
 }
 
