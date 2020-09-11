@@ -1,14 +1,13 @@
 <template>
   <div class="app-container">
     <div style="padding-bottom: 25px">
-      <!-- auto loop pages demo -->
-      <div class="div-left">
-        <el-button type="primary" @click="changePrev">Prev</el-button>
-      </div>
-      <div class="div-right">
-        <el-button type="primary" @click="changeNext">Next</el-button>
-      </div>
       <div>
+        <span>
+          <el-button type="primary" @click="changePrev">Prev</el-button>
+        </span>
+        <span>
+          <el-button type="primary" @click="changeNext">Next</el-button>
+        </span>
         <pdf
           :src="pdfUrl"
           :page="currentPage"
@@ -55,8 +54,6 @@ export default {
 <style scoped>
 .pdf-set {
   display: inline-block;
-  /* height: 800px; */
-  /* width: 500px; */
   width: 80%;
   position: relative;
   align-self: center;
