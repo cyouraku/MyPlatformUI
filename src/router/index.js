@@ -96,6 +96,20 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/lesson',
+    component: Layout,
+    redirect: '/lesson/index',
+    hidden: false,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/lesson/index'),
+        name: 'LessonDemo',
+        meta: { title: 'LessonDemo', icon: 'guide', noCache: true }
+      }
+    ]
+  },
+  {
     path: '/guide',
     component: Layout,
     redirect: '/guide/index',

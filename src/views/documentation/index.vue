@@ -1,27 +1,61 @@
 <template>
   <div class="app-container documentation-container">
-    <dropdown-menu :items="articleList" style="float:left;margin-left:50px;" title="CukeTest" />
+    <div v-if="checkPermission(['admin'])">
+      <draggable
+        :list="articleList"
+        v-bind="$attrs"
+      >
+        <div
+          v-for="(item, index) in articleList"
+          :key="index"
+        >
+          <dropdown-menu
+            :items="item.articles"
+            style="float:left;margin-left:50px;"
+            :title="item.name"
+          />
+        </div>
+      </draggable>
+    </div>
+    <div v-if="checkPermission(['editor'])">
+      <draggable
+        :list="lessonList"
+        v-bind="$attrs"
+      >
+        <div
+          v-for="(item, index) in lessonList"
+          :key="index"
+        >
+          <dropdownMenu4Lesson
+            :items="item.articles"
+            style="float:left;margin-left:50px;"
+            :title="item.name"
+          />
+        </div>
+      </draggable>
+    </div>
   </div>
 </template>
 <script>
+import checkPermission from '@/utils/permission'
 import DropdownMenu from '@/components/Share/dropdownMenu'
+import DropdownMenu4Lesson from '@/components/Share/dropdownMenu4Lesson'
+import draggable from 'vuedraggable'
+import articleList from './articleList'
+import lessonList from './lessonList'
 
 export default {
   name: 'Documentation',
-  components: { DropdownMenu },
+  components: { DropdownMenu, DropdownMenu4Lesson, draggable },
   data() {
     return {
-      articleList: [
-        { title: '概述', href: 'http://cuketest.com/zh-cn/bdd/' },
-        { title: '剧本文件编辑', href: 'http://cuketest.com/zh-cn/features/' },
-        { title: '代码编辑', href: 'http://cuketest.com/zh-cn/codes/' },
-        { title: '执行及测试报告', href: 'http://cuketest.com/zh-cn/execution/' },
-        { title: '模型管理器', href: 'http://cuketest.com/zh-cn/model_mgr/' },
-        { title: '自动化API', href: 'http://cuketest.com/zh-cn/node_api/' },
-        { title: 'Qt自动化', href: 'http://cuketest.com/zh-cn/qt/' },
-        { title: '其它主题', href: 'http://cuketest.com/zh-cn/misc/' }
-      ]
+      // name & title max 10 varchar.
+      articleList: articleList,
+      lessonList: lessonList
     }
+  },
+  methods: {
+    checkPermission
   }
 }
 </script>
