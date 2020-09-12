@@ -44,6 +44,28 @@ const articleList =
           { title: '文档', href: 'https://panjiachen.github.io/vue-element-admin-site/zh/guide/' },
           { title: '在线Demo', href: 'https://panjiachen.github.io/vue-element-admin/' }
         ]
+  },
+  { name: 'nodejs',
+    articles:
+        [
+          { title: 'vue-pdf', href: 'https://openbase.io/js/vue-pdf' },
+          { title: 'npm search', href: 'https://www.npmjs.com/' }
+        ]
+  },
+  { name: 'wii game',
+    articles:
+        [
+          { title: '战国无双3', href: 'https://www.ziperto.com/sengoku-musou-3-moushouden/' },
+          { title: '使命召唤现代战争3', href: 'https://www.ziperto.com/call-of-duty-modern-warfare-reflex/' },
+          { title: 'ziperto', href: 'https://www.ziperto.com/nintendo/wii-iso/page/12/' }
+        ]
+  },
+  { name: '小早语文',
+    articles:
+        [
+          { title: '01_绘本', href: 'https://www.weiyun.com/disk/folder/c397e001eef123288fcf166c3eeb992d' },
+          { title: '05_情景练习册', href: 'https://www.weiyun.com/disk/folder/c397e001808f541a89070b01f1713952' }
+        ]
   }
 ]
 
