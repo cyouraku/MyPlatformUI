@@ -63,7 +63,13 @@ export default {
     theme: 'Theme',
     clipboardDemo: 'Clipboard',
     i18n: 'I18n',
-    externalLink: 'External Link'
+    externalLink: 'External Link',
+    lesson: 'Lesson',
+    lessonDetail: 'Lesson Detail',
+    lessonsPart1: 'Lessons Part 1',
+    lessonsPart2: 'Lessons Part 2',
+    lessonsPart3: 'Lessons Part 3',
+    lessonsPart4: 'Lessons Part 4'
   },
   navbar: {
     logOut: 'Log Out',

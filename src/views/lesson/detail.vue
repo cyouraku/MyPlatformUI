@@ -1,15 +1,21 @@
 <template>
   <div class="app-container">
     <div style="padding-bottom: 25px">
+      <el-row :gutter="0" type="flex" justify="center">
+        <el-col :xs="{span: 8}" :sm="{span: 8}" :md="{span: 8}" :lg="{span: 8}" :xl="{span: 8}">
+          <el-button type="primary" @click="changePrev">Prev</el-button>
+        </el-col>
+        <el-col :xs="{span: 8}" :sm="{span: 8}" :md="{span: 8}" :lg="{span: 8}" :xl="{span: 8}">
+          <el-button type="info" disabled>Current Page: {{ currentPage }}</el-button>
+        </el-col>
+        <p style="width: 60px" />
+        <el-col :xs="{span: 8}" :sm="{span: 8}" :md="{span: 8}" :lg="{span: 8}" :xl="{span: 8}">
+          <el-button type="primary" @click="changeNext">Next</el-button>
+        </el-col>
+      </el-row>
       <el-row :gutter="0">
-        <el-col :xs="{span: 24}" :sm="{span: 24}" :md="{span: 24}" :lg="{span: 24}" :xl="{span: 24}" style="margin-bottom:30px;">
+        <el-col :xs="{span: 24}" :sm="{span: 24}" :md="{span: 24}" :lg="{span: 24}" :xl="{span: 24}">
           <div class="lesson-container">
-            <span>
-              <el-button type="primary" @click="changePrev">Prev</el-button>
-            </span>
-            <span>
-              <el-button type="primary" @click="changeNext">Next</el-button>
-            </span>
             <pdf
               :src="pdfUrl"
               :page="currentPage"
@@ -18,7 +24,10 @@
               @page-loaded="currentPage = $event"
             />
           </div>
-          <vue-audio :file="mp3Url" />
+          <!-- <vue-audio :file="mp3Url" /> -->
+          <audio controls>
+            <source :src="mp3Url" type="audio/ogg">
+          </audio>
         </el-col>
       </el-row>
     </div>
@@ -26,12 +35,11 @@
 </template>
 
 <script>
-import VueAudio from 'vue-audio'
 import pdf from 'vue-pdf'
 
 export default {
   name: 'LessonDemo',
-  components: { VueAudio, pdf },
+  components: { pdf },
   data() {
     return {
       mp3Url: '',
@@ -50,10 +58,6 @@ export default {
       this.lessonId = id
       this.mp3Url = `/static/lesson/${this.lessonId}/${this.lessonId}.mp3`
       this.pdfUrl = `/static/lesson/${this.lessonId}/${this.lessonId}.pdf`
-      // Debug
-      console.log(`this.lessonId = ${this.lessonId}`)
-      console.log(`this.mp3Url = ${this.mp3Url}`)
-      console.log(`this.pdfUrl = ${this.pdfUrl}`)
     },
     changePrev() {
       if (this.currentPage > 1) {

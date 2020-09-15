@@ -95,20 +95,51 @@ export const constantRoutes = [
       }
     ]
   },
+
   {
-    path: '/lesson/:id',
+    path: '/lesson',
     component: Layout,
-    redirect: '/lesson/:id/index/',
-    hidden: true,
+    redirect: '/lesson/list',
+    hidden: false,
+    meta: {
+      title: 'lesson',
+      icon: 'example'
+    },
     children: [
       {
-        path: 'index',
-        component: () => import('@/views/lesson/index'),
-        // name: 'LessonDemo',
-        meta: { title: 'LessonDemo', icon: 'guide', noCache: true }
+        path: 'detail/:id',
+        component: () => import('@/views/lesson/detail'),
+        // name: 'lessonDetail',
+        meta: { title: 'lessonDetail', noCache: true },
+        hidden: true
+      },
+      {
+        path: 'list',
+        component: () => import('@/views/lesson/list_part_1'),
+        name: 'lessonsPart1',
+        meta: { title: 'lessonsPart1', icon: 'list' }
+      },
+      {
+        path: 'list2',
+        component: () => import('@/views/lesson/list_part_2'),
+        name: 'lessonsPart2',
+        meta: { title: 'lessonsPart2', icon: 'list' }
+      },
+      {
+        path: 'list3',
+        component: () => import('@/views/lesson/list_part_3'),
+        name: 'lessonsPart3',
+        meta: { title: 'lessonsPart3', icon: 'list' }
+      },
+      {
+        path: 'list4',
+        component: () => import('@/views/lesson/list_part_4'),
+        name: 'lessonsPart4',
+        meta: { title: 'lessonsPart4', icon: 'list' }
       }
     ]
   },
+
   {
     path: '/guide',
     component: Layout,
